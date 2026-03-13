@@ -5,10 +5,10 @@ from postcode_functions import (
     validate_postcode,
     get_postcode_completions,
 )
-import os
 
 
 def apply_operation(validation: bool, postcode: str) -> None:
+    """Apply the operation to the postcode specified, based on validation's bool value."""
     if validation:
         return output_validation(postcode)
     return output_postcodes(postcode)
@@ -42,6 +42,5 @@ if __name__ == "__main__":
     )
     arg_parser.add_argument("postcode", help="The postcode to apply the operation to.")
     args = arg_parser.parse_args()
-    postcode = args.postcode.upper().strip()
-    validate = True if args.mode == "validate" else False
-    apply_operation(validation=validate, postcode=postcode)
+    postcode_input = args.postcode.upper().strip()
+    apply_operation(validation=args.mode == "validate", postcode=postcode_input)
