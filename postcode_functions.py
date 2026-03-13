@@ -56,9 +56,17 @@ def get_postcode_for_location(lat: float, long: float) -> str:
 
 
 def get_postcode_completions(postcode_start: str) -> list[str]:
-    """"""
-    pass
+    """Obtain possible postcode completions based on the start of a postcode."""
+    if not isinstance(postcode_start, str):
+        raise TypeError("Function expects a string.")
+    method = "/postcodes"
+    required_url = f"{BASE_URL}{method}/{postcode_start}/autocomplete"
+    response = req.get(required_url)
+    if response.status_code >= 300:
+        raise req.RequestException("Unable to access API.")
+    return response.json()["result"]
 
 
 def get_postcodes_details(postcodes: list[str]) -> dict:
+    if post
     pass
