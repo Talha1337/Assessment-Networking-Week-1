@@ -36,10 +36,27 @@ def get_postcode_for_location(lat: float, long: float) -> str:
     """Get postcode based on a location input"""
     if not isinstance(lat, float) or not isinstance(long, float):
         raise TypeError("Function expects two floats.")
-    pass
+    method = "/postcodes"
+    full_endpoint = BASE_URL + method
+    response = req.get(
+        full_endpoint,
+        params={
+            "lat": lat,
+            "lon": long,
+        },
+        timeout=5,
+    )
+    print(response.request)
+    if response.status_code != 200:
+        raise req.RequestException("Unable to access API.")
+    closest_code = response.json()["result"]
+    if not closest_code:
+        raise ValueError("No relevant postcode found.")
+    return closest_code[0]["postcode"]
 
 
 def get_postcode_completions(postcode_start: str) -> list[str]:
+    """"""
     pass
 
 
