@@ -1,7 +1,11 @@
 """A CLI application for interacting with the Postcode API."""
 
 from argparse import ArgumentParser
-from postcode_functions import validate_postcode, get_postcode_completions
+from postcode_functions import (
+    validate_postcode,
+    get_postcode_completions,
+)
+import os
 
 
 def apply_operation(validation: bool, postcode: str) -> None:
