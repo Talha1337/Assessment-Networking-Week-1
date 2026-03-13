@@ -1,5 +1,5 @@
 ============================= test session starts ==============================
-platform linux -- Python 3.12.13, pytest-9.0.2, pluggy-1.6.0
+platform linux -- Python 3.12.12, pytest-9.0.2, pluggy-1.6.0
 rootdir: /home/runner/work/Assessment-Networking-Week-1/Assessment-Networking-Week-1
 plugins: requests-mock-1.12.1
 collected 90 items
@@ -9,25 +9,8 @@ test_postcode_cli.py ...............................                     [ 48%]
 test_postcode_functions.py ............................................. [ 98%]
 .                                                                        [100%]
 
-============================== 90 passed in 5.25s ==============================
-************* Module postcode_cli
-postcode_cli.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
-postcode_cli.py:11:38: W0621: Redefining name 'postcode' from outer scope (line 45) (redefined-outer-name)
-postcode_cli.py:17:22: W0621: Redefining name 'postcode' from outer scope (line 45) (redefined-outer-name)
-postcode_cli.py:25:21: W0621: Redefining name 'postcode' from outer scope (line 45) (redefined-outer-name)
-postcode_cli.py:46:4: C0103: Constant name "validate" doesn't conform to UPPER_CASE naming style (invalid-name)
-postcode_cli.py:46:15: R1719: The if expression can be replaced with 'test' (simplifiable-if-expression)
-postcode_cli.py:8:0: C0411: standard import "os" should be placed before first party import "postcode_functions.validate_postcode"  (wrong-import-order)
-postcode_cli.py:8:0: W0611: Unused import os (unused-import)
-************* Module postcode_functions
-postcode_functions.py:33:0: C0301: Line too long (143/100) (line-too-long)
-postcode_functions.py:14:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-postcode_functions.py:28:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-postcode_functions.py:92:15: W3101: Missing timeout argument for method 'req.get' can cause your program to hang indefinitely (missing-timeout)
-postcode_functions.py:101:0: C0116: Missing function or method docstring (missing-function-docstring)
-postcode_functions.py:4:0: C0411: standard import "os" should be placed before third party import "requests" (wrong-import-order)
-postcode_functions.py:5:0: C0411: standard import "json" should be placed before third party import "requests" (wrong-import-order)
+============================== 90 passed in 5.84s ==============================
 
-------------------------------------------------------------------
-Your code has been rated at 8.58/10 (previous run: 8.58/10, +0.00)
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
 
