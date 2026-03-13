@@ -2,14 +2,14 @@
 platform linux -- Python 3.12.13, pytest-9.0.2, pluggy-1.6.0
 rootdir: /home/runner/work/Assessment-Networking-Week-1/Assessment-Networking-Week-1
 plugins: requests-mock-1.12.1
-collected 91 items
+collected 90 items
 
 test_postcode_cache.py .............                                     [ 14%]
-test_postcode_cli.py .............F..................                    [ 49%]
+test_postcode_cli.py ...............................                     [ 48%]
 test_postcode_functions.py ............................................. [ 98%]
 .                                                                        [100%]
 
-========================= 1 failed, 90 passed in 7.27s =========================
+============================== 90 passed in 5.25s ==============================
 ************* Module postcode_cli
 postcode_cli.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
 postcode_cli.py:11:38: W0621: Redefining name 'postcode' from outer scope (line 45) (redefined-outer-name)
