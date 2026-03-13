@@ -68,5 +68,19 @@ def get_postcode_completions(postcode_start: str) -> list[str]:
 
 
 def get_postcodes_details(postcodes: list[str]) -> dict:
-    if post
-    pass
+    if not isinstance(postcodes, list):
+        raise TypeError("Function expects a list of strings.")
+    for postcode in postcodes:
+        if not isinstance(postcode, str):
+            print(postcode)
+            raise TypeError("Function expects a list of strings.")
+    method = "/postcodes"
+    response = req.post(
+        f"{BASE_URL}{method}",
+        headers={"content-type": "application/json"},
+        json={"postcodes": postcodes},
+        timeout=5,
+    )
+    if response.status_code >= 300:
+        raise req.RequestException("Unable to access API.")
+    return response.json()["result"]
